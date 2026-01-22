@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Rosa HTML 🌹</title>
+<style>
+    body {
+        background: linear-gradient(to bottom, #ffe6ec, #fff);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .card {
+        background: white;
+        padding: 30px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        max-width: 360px;
+    }
+
+    input {
+        padding: 10px;
+        width: 90%;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        margin-bottom: 15px;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    button {
+        background: #d6336c;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    button:hover {
+        background: #c2255c;
+    }
+
+    .rose {
+        font-size: 80px;
+        margin-top: 15px;
+        animation: float 2s infinite ease-in-out;
+        display: none;
+    }
+
+    .message {
+        color: #d6336c;
+        font-size: 20px;
+        margin-top: 10px;
+        display: none;
+        font-weight: bold;
+    }
+
+    .firma {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #555;
+        display: none;
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0); }
+    }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Escribí tu nombre 💕</h2>
+    <input type="text" id="nombre" placeholder="Tu nombre aquí">
+    <br>
+    <button onclick="verificarNombre()">Descubrir sorpresa</button>
+
+    <div class="message" id="mensaje">
+        Te quiero muchísimo, hoy y siempre ❤️
+    </div>
+    <div class="rose" id="rosa">🌹</div>
+    <div class="firma" id="firma">
+        Con cariño,<br>
+        <strong>Ing. Leonardo Meza</strong>
+    </div>
+</div>
+
+<script>
+    function verificarNombre() {
+        const nombre = document.getElementById("nombre").value.trim().toLowerCase();
+        const mensaje = document.getElementById("mensaje");
+        const rosa = document.getElementById("rosa");
+        const firma = document.getElementById("firma");
+
+        if (nombre === "vaneza") {
+            mensaje.style.display = "block";
+            rosa.style.display = "block";
+            firma.style.display = "block";
+        } else {
+            mensaje.style.display = "none";
+            rosa.style.display = "none";
+            firma.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
